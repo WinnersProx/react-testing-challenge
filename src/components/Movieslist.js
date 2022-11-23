@@ -5,7 +5,7 @@ function Movieslist({ movies }) {
     <section>
       <ul className="styled w-100 pl-0" data-testid="moviesList">
         {movies
-          .sort((a, b) => b.duration - a.duration)
+          .sort((a, b) => (+b.duration) - (+a.duration))
           .map((movie, idx) => (
             <li
               className="flex slide-up-fade-in justify-content-between"
@@ -20,7 +20,7 @@ function Movieslist({ movies }) {
               </div>
               <div className="layout-row my-auto mr-20">
                 {/* use this paragraph for movie duration, for example: '2.5 Hrs' */}
-                <p className="justify-content-end">{movie.duration} hrs</p>
+                <p className="justify-content-end">{movie.duration} Hrs</p>
               </div>
             </li>
           ))}

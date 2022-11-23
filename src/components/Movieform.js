@@ -25,6 +25,8 @@ function Movieform({ onMovieSubmitted }) {
     const hasError = !DURATION_REGEX.test(duration);
 
     if(hasError) return setHasFormatError(true);
+
+    if(!name.trim() || !duration.trim() || !rating) return;
     
     onMovieSubmitted({ 
       name,

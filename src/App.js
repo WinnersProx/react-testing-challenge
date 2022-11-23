@@ -38,7 +38,7 @@ function App() {
         </div>
         <div className='layout-column w-30'>
           <Search onSearch={onSearch} />
-          <Movieslist movies={filteredMovies} /> 
+          {(!!movies.length) && <Movieslist movies={filteredMovies} /> }
           {!!(!filteredMovies.length && movies.length) && <div data-testid='noResult'>
             <h3 className='text-center'>No Results Found</h3>
           </div>}
