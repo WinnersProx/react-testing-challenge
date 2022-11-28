@@ -18,7 +18,7 @@ function App() {
   }
 
   const onSearch = (value) => {
-    if(value.length == 0) setFilteredMovies([...movies]);
+    if(value.length === 0) setFilteredMovies([...movies]);
 
     if(value.length >= 2) {
       const filteredData = movies.filter(m => (

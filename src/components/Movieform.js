@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
 
-const DURATION_REGEX = /^[0-9]{1,}[\.\d]+[m|h]{1}$/;
+const DURATION_REGEX = /^\d+\.?\d*?[m|h]{1}$/;
+
 
 const formatDuration = (duration) => {
   if(duration.includes('m')) {
-    return (parseFloat(duration) / 60).toFixed(2);
+    return (parseFloat(duration) / 60).toFixed(1);
   }
 
-  return duration;
+  return duration.split('h')[0];
 }
 
 function Movieform({ onMovieSubmitted }) {
